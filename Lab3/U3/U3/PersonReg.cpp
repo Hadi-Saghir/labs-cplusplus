@@ -74,7 +74,22 @@ class PersonReg{
         return nullptr;
 
     }
+    
+    Person* SearchByName(const string& namn, const Person* person) const {
+        if (currSize == 0) {
+            return nullptr;
+        }
 
+        for (vector<Person>::const_iterator it = personRegistry.begin(); it != personRegistry.end(); ++it) {
+            const Person& currentPerson = *it;
+            if (currentPerson.CompareName(namn) == 0) {
+                return const_cast<Person*>(&currentPerson); //const_cast removes the const adjective, so i can modify or delete person
+            }
+        }
+
+        return nullptr;
+
+    }
 
     void RemoveEntry(Person* ptr) {
         

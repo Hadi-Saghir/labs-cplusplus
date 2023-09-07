@@ -24,7 +24,7 @@ void Init(PersonReg& tr) {
     tr.ClearRegistry();
     PD(tr.AddTestPerson("olle", "0703955123"));
     PD(tr.AddTestPerson("olle", "123"));
-    PD(tr.AddTestPerson("kurt�ke", "12345"));
+    PD(tr.AddTestPerson("kurtke", "12345"));
     PD(tr.AddTestPerson("olle", "456"));
     PD(tr.AddTestPerson("sven", "456"));
     PD(tr.AddTestPerson("kurt", "95815"));
@@ -35,20 +35,28 @@ void Init(PersonReg& tr) {
 }
 
 #include <fstream>
+
+using std::ifstream;
+
 bool ReadReg(PersonReg& reg, string fileName) {
     string line;
     ifstream myfile(fileName);
 
     if (myfile.is_open())
     {
+        Person* personPtr;
+
         while (getline(myfile, line))
         {
             while (line.length() == 0 && getline(myfile, line))
                 ;
             string name(line);
-            string adress;
-            getline(myfile, adress);
-            reg.LaggTill(&Person(name, adress));
+            string address;
+            getline(myfile, address);
+
+            personPtr = new Person(name, address);
+
+            reg.AddPerson(personPtr);
         }
         myfile.close();
         return true;
@@ -70,45 +78,45 @@ void Test1() {
 void Test2() {
     PersonReg reg(10);
     Init(reg);
-    string namn, adress;
-    Person te, * tep;
+    string namn, address;
+    Person * tep;
 
-    tep = reg.SokNamn("olle");
+    tep = reg.SearchByName("olle");
     if (tep) {
-        cout << tep->adress << endl;
-        reg.TaBortEntry(tep);
+        cout << tep->GetAddress() << endl;
+        reg.RemoveEntry(tep);
     }
     else
         cout << "not found \n";
 
-    tep = reg.SokNamn("olle");
+    tep = reg.SearchByName("olle");
     if (tep) {
-        cout << tep->adress << endl;
-        reg.TaBortEntry(tep);
+        cout << tep->GetAddress() << endl;
+        reg.RemoveEntry(tep);
     }
     else
         cout << "not found \n";
 
-    tep = reg.SokNamn("olle");
+    tep = reg.SearchByName("olle");
     if (tep) {
-        cout << tep->adress << endl;
-        reg.TaBortEntry(tep);
+        cout << tep->GetAddress() << endl;
+        reg.RemoveEntry(tep);
     }
     else
         cout << "not found \n";
 
-    tep = reg.SokNamn("olle");
+    tep = reg.SearchByName("olle");
     if (tep) {
-        cout << tep->adress << endl;
-        reg.TaBortEntry(tep);
+        cout << tep->GetAddress() << endl;
+        reg.RemoveEntry(tep);
     }
     else
         cout << "not found \n";
 
-    tep = reg.SokNamn("olle");
+    tep = reg.SearchByName("olle");
     if (tep) {
-        cout << tep->adress << endl;
-        reg.TaBortEntry(tep);
+        cout << tep->GetAddress() << endl;
+        reg.RemoveEntry(tep);
     }
     else
         cout << "not found \n";
@@ -124,27 +132,27 @@ void Test3() {
 
     Init(reg);
     reg.Print();
-    string namn, adress;
-    Person te, * tep;
+    string namn, address;
+    Person *tep;
 
     tep = nullptr;
-    while (tep = reg.SokFritt("olle", tep)) {
+    while (tep = reg.SearchByName("olle", tep)) {
         tep->Print();
-        //        cout << tep->adress << endl;
+                cout << tep->GetAddress() << endl;
     }
     cout << "not found \n";
 
-    cout << "blandade s�kningar \n";
+    cout << "blandade sökningar \n";
     Person* ptr1 = nullptr, * ptr2 = nullptr;
     bool first = true;
     while (first || ptr1 || ptr2) {
         if (ptr1 || first) {
-            ptr1 = reg.SokFritt("olle", ptr1);
+            ptr1 = reg.SearchByName("olle", ptr1);
             if (ptr1)
                 ptr1->Print();
         }
         if (ptr2 || first) {
-            ptr2 = reg.SokFritt("581", ptr2);
+            ptr2 = reg.SearchByName("581", ptr2);
             if (ptr2)
                 ptr2->Print();
         }
@@ -154,11 +162,11 @@ void Test3() {
 
 int main() {
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
-    locale::global(locale("swedish"));
+    std::locale::global(std::locale::locale("swedish"));
     PersonReg pr(5);
     Init(pr);
     Test1();
     Test2();
     Test3();
-    cin.get();
+    std::cin.get();
 }

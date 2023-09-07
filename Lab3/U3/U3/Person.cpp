@@ -17,6 +17,7 @@ class Person{
         Person(string name, string address) : name(name), address(address){}
 
         string& GetName() const { return const_cast<string&>(name); }
+        string& GetAddress() const { return const_cast<string&>(address); }
 
         int CompareName(const string& namn) const {
             return name.compare(this->name);

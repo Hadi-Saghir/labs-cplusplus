@@ -1,0 +1,10 @@
+^C:\USERS\HADIS\ONEDRIVE\UNI\SYSTEMUTVECKLARE\TERMIN 5\C++\LABS\LAB1\INVSQRT_BUILD_VS\CMAKEFILES\6E313B3D6446B7F91A4A2BDD27BDBB56\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/hadis/OneDrive/Uni/Systemutvecklare/termin 5/C++/Labs/lab1/invsqrt" "-BC:/Users/hadis/OneDrive/Uni/Systemutvecklare/termin 5/C++/Labs/lab1/invsqrt_build_vs" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "C:/Users/hadis/OneDrive/Uni/Systemutvecklare/termin 5/C++/Labs/lab1/invsqrt_build_vs/InvSqrt.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

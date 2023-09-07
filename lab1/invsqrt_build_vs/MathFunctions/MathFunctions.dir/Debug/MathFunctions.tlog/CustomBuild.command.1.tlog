@@ -1,0 +1,10 @@
+^C:\USERS\HADIS\ONEDRIVE\UNI\SYSTEMUTVECKLARE\TERMIN 5\C++\LABS\LAB1\INVSQRT\MATHFUNCTIONS\CMAKELISTS.TXT
+setlocal
+"C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" "-SC:/Users/hadis/OneDrive/Uni/Systemutvecklare/termin 5/C++/Labs/lab1/invsqrt" "-BC:/Users/hadis/OneDrive/Uni/Systemutvecklare/termin 5/C++/Labs/lab1/invsqrt_build_vs" --check-stamp-file "C:/Users/hadis/OneDrive/Uni/Systemutvecklare/termin 5/C++/Labs/lab1/invsqrt_build_vs/MathFunctions/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

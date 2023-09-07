@@ -1,0 +1,6 @@
+C:/Users/hadis/OneDrive/Uni/Systemutvecklare/termin 5/C++/Labs/lab1/invsqrt_build_nmake/CMakeFiles/InvSqrt.dir
+C:/Users/hadis/OneDrive/Uni/Systemutvecklare/termin 5/C++/Labs/lab1/invsqrt_build_nmake/CMakeFiles/edit_cache.dir
+C:/Users/hadis/OneDrive/Uni/Systemutvecklare/termin 5/C++/Labs/lab1/invsqrt_build_nmake/CMakeFiles/rebuild_cache.dir
+C:/Users/hadis/OneDrive/Uni/Systemutvecklare/termin 5/C++/Labs/lab1/invsqrt_build_nmake/MathFunctions/CMakeFiles/MathFunctions.dir
+C:/Users/hadis/OneDrive/Uni/Systemutvecklare/termin 5/C++/Labs/lab1/invsqrt_build_nmake/MathFunctions/CMakeFiles/edit_cache.dir
+C:/Users/hadis/OneDrive/Uni/Systemutvecklare/termin 5/C++/Labs/lab1/invsqrt_build_nmake/MathFunctions/CMakeFiles/rebuild_cache.dir

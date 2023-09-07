@@ -8,7 +8,7 @@
 #endif
 #endif
 
-#include "PersonReg.h"
+#include "PersonReg.cpp"
 
 #if 1
 #define PN(x) cout << x
@@ -21,13 +21,13 @@
 #endif
 
 void Init(PersonReg& tr) {
-    tr.Tom();
-    PD(tr.LaggTillTest("olle", "0703955123"));
-    PD(tr.LaggTillTest("olle", "123"));
-    PD(tr.LaggTillTest("kurt�ke", "12345"));
-    PD(tr.LaggTillTest("olle", "456"));
-    PD(tr.LaggTillTest("sven", "456"));
-    PD(tr.LaggTillTest("kurt", "95815"));
+    tr.ClearRegistry();
+    PD(tr.AddTestPerson("olle", "0703955123"));
+    PD(tr.AddTestPerson("olle", "123"));
+    PD(tr.AddTestPerson("kurt�ke", "12345"));
+    PD(tr.AddTestPerson("olle", "456"));
+    PD(tr.AddTestPerson("sven", "456"));
+    PD(tr.AddTestPerson("kurt", "95815"));
     PN(endl);
     PN(("fullt reg "));
     PN((endl));
@@ -63,7 +63,7 @@ void Test1() {
     PersonReg reg(10);
     ReadReg(reg, "PersonExempel.txt");
     reg.Print(); cout << "\n\n";
-    reg.Tom();
+    reg.ClearRegistry();
     reg.Print();
 }
 
@@ -115,7 +115,7 @@ void Test2() {
 
     reg.Print();
 
-    reg.Tom();
+    reg.ClearRegistry();
     reg.Print();
 }
 

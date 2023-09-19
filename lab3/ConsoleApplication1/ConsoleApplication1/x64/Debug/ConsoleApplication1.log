@@ -1,0 +1,3 @@
+﻿  PersonRegTest.cpp
+C:\Users\hadis\Desktop\lab3\ConsoleApplication1\ConsoleApplication1\PersonReg.cpp(63): warning C4715: 'PersonReg::AddPerson': not all control paths return a value
+  ConsoleApplication1.vcxproj -> C:\Users\hadis\Desktop\lab3\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe
